@@ -14,8 +14,7 @@ namespace Application_Manager.States {
             Debug.Log("Exiting Initial State");
         }
         
-        // TODO: this should go in the base class
-        public void ChangeState(BaseState state) {
+        public override void ChangeState(BaseState state) {
             Debug.Log("Changing Initial State");
             ApplicationManager.Instance.ChangeState(state);
         }

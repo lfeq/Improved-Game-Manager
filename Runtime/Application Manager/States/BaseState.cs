@@ -10,5 +10,9 @@ namespace Application_Manager.States {
         public virtual void OnExit() {
             // Noop
         }
+        
+        public virtual void ChangeState(BaseState state) {
+            // Noop
+        }
     }
 }
