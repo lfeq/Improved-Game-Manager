@@ -2,6 +2,7 @@
 using UnityEngine;
 
 namespace Application_Manager.States {
+    // TODO: All Create Asset Menu should be in the menu name "Application Manager/..."
     [CreateAssetMenu(fileName = "New Initial State", menuName = "States/Initial State")]
     public class InitialState : BaseState {
         public ApplicationEventListener eventListener;
