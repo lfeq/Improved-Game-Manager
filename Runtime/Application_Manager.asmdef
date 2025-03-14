@@ -1,0 +1,16 @@
+{
+    "name": "Application_Manager",
+    "rootNamespace": "Application_Manager",
+    "references": [
+        "GUID:de184cc3ec226704b92a2445e8648cf3"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
