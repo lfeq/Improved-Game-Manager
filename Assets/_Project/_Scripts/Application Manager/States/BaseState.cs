@@ -1,5 +1,7 @@
-﻿namespace Application_Manager.States {
-    public abstract class BaseState : IState {
+﻿using UnityEngine;
+
+namespace Application_Manager.States {
+    public abstract class BaseState : ScriptableObject, IState {
         public virtual void OnEnter() {
             // Noop
         }
