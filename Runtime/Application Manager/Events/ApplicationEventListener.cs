@@ -2,10 +2,10 @@
 using UnityEngine.Events;
 
 namespace Application_Manager.Events {
-    [CreateAssetMenu(fileName = "New Application Event Listener", menuName = "Application Event Listener")]
+    [CreateAssetMenu(fileName = "New Application Event Listener",
+        menuName = "Application Manager/Application Event Listener/ New Application Event Listener")]
     public class ApplicationEventListener : ScriptableObject {
-        [Tooltip("Event to register with.")] 
-        public ApplicationEvent Event;
+        [Tooltip("Event to register with.")] public ApplicationEvent Event;
 
         [Tooltip("Response to invoke when Event is raised.")]
         public UnityEvent Response;
