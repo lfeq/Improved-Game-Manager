@@ -1,6 +1,6 @@
 {
   "name": "com.lorenz_equihua.improved_game_manager",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "displayName": "Improved Game Manager",
   "description": "Improved Game Manager allows you to manage the game state in a more efficient way. Using scriptable objects to store the game state and events to change it.",
   "unity": "2022.1",

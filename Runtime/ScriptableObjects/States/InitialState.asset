@@ -13,3 +13,5 @@ MonoBehaviour:
   m_Name: InitialState
   m_EditorClassIdentifier: 
   eventListener: {fileID: 11400000, guid: 8d5cf0b77ea8bf54e849ac97a79314a0, type: 2}
+  stateName: Initial State
+  debugMode: 1

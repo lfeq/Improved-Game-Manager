@@ -1,3 +1,12 @@
+## [0.0.3] - 15/03/2025
+
+### Bug Fixes and Improvements
+- Fixed a bug where Application Manager state machine was in start
+- Moved change state function to EventListeners
+- Added debug option to states
+- Added state name to `BaseState` class
+- Moved `EventListener` property to `BaseState` class
+
 ## [0.0.2] - 14/03/2025
 
 ### Updated Submenu to create states, events and listeners

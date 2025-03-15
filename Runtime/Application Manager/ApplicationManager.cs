@@ -9,9 +9,12 @@ namespace Application_Manager {
         
         private StateMachine m_stateMachine;
 
-        private void Start() {
+        protected override void Awake() {
+            base.Awake(); 
             m_stateMachine = new StateMachine();
-            m_stateMachine.ChangeState(initialState);
+            if (initialState != null) {
+                m_stateMachine.ChangeState(initialState);
+            }
         }
         
         public void ChangeState(BaseState t_state) {
