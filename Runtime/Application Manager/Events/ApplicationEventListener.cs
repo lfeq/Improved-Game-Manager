@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Application_Manager.States;
+using UnityEngine;
 using UnityEngine.Events;
 
 namespace Application_Manager.Events {
@@ -26,6 +27,10 @@ namespace Application_Manager.Events {
 
         public void OnEventRaised() {
             Response.Invoke();
+        }
+
+        public void ChangeState(BaseState t_state) {
+            ApplicationManager.Instance.ChangeState(t_state);
         }
     }
 }
