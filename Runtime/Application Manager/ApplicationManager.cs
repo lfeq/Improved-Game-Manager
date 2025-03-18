@@ -10,7 +10,10 @@ namespace Application_Manager {
         private StateMachine m_stateMachine;
 
         protected override void Awake() {
-            base.Awake(); 
+            base.Awake();
+            if (Instance != this) {
+                return;
+            }
             m_stateMachine = new StateMachine();
             if (initialState != null) {
                 m_stateMachine.ChangeState(initialState);
