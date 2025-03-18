@@ -17,6 +17,10 @@ namespace Application_Manager {
             }
         }
         
+        public BaseState GetCurrentState() {
+            return m_stateMachine.CurrentState as BaseState;
+        }
+        
         public void ChangeState(BaseState t_state) {
             m_stateMachine.ChangeState(t_state);
         }

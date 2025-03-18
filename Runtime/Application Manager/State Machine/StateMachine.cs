@@ -2,6 +2,7 @@
 
 namespace Application_Manager.State_Machine {
     public class StateMachine {
+        public IState CurrentState => m_currentState;
         private IState m_currentState;
         
         public void ChangeState(IState t_newState) {
