@@ -9,5 +9,16 @@
   "author": {
     "name": "Lorenz Equihua",
     "email": "lorenz.equihua@artek.edu.mx"
-  }
+  },
+  "changelogUrl": "https://github.com/lfeq/Improved-Game-Manager/blob/main/CHANGELOG.md",
+  "license": "MIT",
+  "licensesUrl": "https://github.com/lfeq/Improved-Game-Manager/blob/main/LICENSE.md",
+  "documentationUrl": "https://github.com/lfeq/Improved-Game-Manager/blob/main/README.md",
+  "samples": [
+    {
+      "displayName": "Samples",
+      "description": "Sample project to show how to use the Improved Game Manager. ",
+      "path": "Samples~/"
+    }
+  ]
 }
