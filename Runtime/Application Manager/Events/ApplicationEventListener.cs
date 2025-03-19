@@ -6,11 +6,11 @@ namespace Application_Manager.Events {
     [CreateAssetMenu(fileName = "New Application Event Listener",
         menuName = "Application Manager/Application Event Listener/ New Application Event Listener")]
     public class ApplicationEventListener : ScriptableObject {
-        [Tooltip("Event to register with.")] public ApplicationEvent Event;
+        [Tooltip("Event to register with.")] 
+        public ApplicationEvent Event;
         
-        // TODO: Probably should just call ChangeState directly from the event
-        [Tooltip("Response to invoke when Event is raised.")]
-        public UnityEvent Response;
+        [Tooltip("State to change to when Event is raised.")]
+        public BaseState stateToChangeTo;
 
         private void OnEnable() {
             if (Event == null) {
@@ -27,11 +27,7 @@ namespace Application_Manager.Events {
         }
 
         public void OnEventRaised() {
-            Response.Invoke();
-        }
-
-        public void ChangeState(BaseState t_state) {
-            ApplicationManager.Instance.ChangeState(t_state);
+            ApplicationManager.Instance.ChangeState(stateToChangeTo);
         }
     }
 }

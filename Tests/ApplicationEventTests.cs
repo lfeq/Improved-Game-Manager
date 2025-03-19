@@ -1,53 +1,82 @@
 ﻿using System.Reflection;
+using Application_Manager;
 using Application_Manager.Events;
 using NUnit.Framework;
 using UnityEngine;
-using UnityEngine.Events;
 
 namespace Improved_Game_Manager.Tests {
-    public class ApplicationEventTests
-    {
-        private int callbackInvocationCount;
+    public class ApplicationEventTests {
+        private GameObject testManagerGO;
 
         [SetUp]
-        public void Setup()
-        {
-            callbackInvocationCount = 0;
+        public void Setup() {
+            // Create a new GameObject to host the ApplicationManager singleton.
+            testManagerGO = new GameObject("TestApplicationManager");
+        }
+
+        [TearDown]
+        public void Teardown() {
+            if (testManagerGO != null) {
+                Object.DestroyImmediate(testManagerGO);
+            }
+            if (ApplicationManager.Instance != null) {
+                Object.DestroyImmediate(ApplicationManager.Instance.gameObject);
+            }
         }
 
         [Test]
-        public void ApplicationEvent_RaisesEvent_InvokesListenerResponse()
-        {
-            // Create a ScriptableObject instance of ApplicationEvent.
-            var appEvent = ScriptableObject.CreateInstance<ApplicationEvent>();
+        public void ApplicationEvent_RaisesEvent_ChangesStateInApplicationManager() {
+            // Create an ApplicationManager instance on our test GameObject.
+            var appManager = testManagerGO.AddComponent<ApplicationManager>();
 
-            // Create an ApplicationEventListener instance.
+            // Create an initial dummy state and set it as the initial state using reflection.
+            var initialState = ScriptableObject.CreateInstance<DummyState>();
+            FieldInfo initialStateField = typeof(ApplicationManager)
+                .GetField("initialState", BindingFlags.NonPublic | BindingFlags.Instance);
+            initialStateField.SetValue(appManager, initialState);
+
+            // Manually call Awake() to initialize the state machine.
+            MethodInfo awakeMethod = typeof(ApplicationManager)
+                .GetMethod("Awake", BindingFlags.NonPublic | BindingFlags.Instance);
+            awakeMethod.Invoke(appManager, null);
+
+            // Verify that the current state is the initial state.
+            Assert.AreEqual(initialState, appManager.GetCurrentState());
+
+            // Create an ApplicationEvent and an ApplicationEventListener.
+            var appEvent = ScriptableObject.CreateInstance<ApplicationEvent>();
             var appEventListener = ScriptableObject.CreateInstance<ApplicationEventListener>();
 
-            // Create a UnityEvent and add a callback that increments our counter.
-            appEventListener.Response = new UnityEvent();
-            appEventListener.Response.AddListener(() => { callbackInvocationCount++; });
+            // Create a dummy state that the listener will switch to when the event is raised.
+            var targetState = ScriptableObject.CreateInstance<DummyState>();
+            appEventListener.stateToChangeTo = targetState;
 
             // Assign the event to the listener.
             appEventListener.Event = appEvent;
 
-            // Simulate enabling the listener so it registers with the event.
-            MethodInfo onEnableMethod = appEventListener.GetType().GetMethod("OnEnable", BindingFlags.NonPublic | BindingFlags.Instance);
+            // Simulate enabling the listener (registers it with the event).
+            MethodInfo onEnableMethod = appEventListener.GetType()
+                .GetMethod("OnEnable", BindingFlags.NonPublic | BindingFlags.Instance);
             onEnableMethod.Invoke(appEventListener, null);
 
-            // Raise the event.
+            // Raise the event; this should trigger the listener to change the state.
             appEvent.Raise();
 
-            // Verify that the listener's callback was invoked.
-            Assert.AreEqual(1, callbackInvocationCount);
+            // Verify that ApplicationManager's current state has been updated to the target state.
+            Assert.AreEqual(targetState, appManager.GetCurrentState());
 
-            // Now simulate disabling the listener.
-            MethodInfo onDisableMethod = appEventListener.GetType().GetMethod("OnDisable", BindingFlags.NonPublic | BindingFlags.Instance);
+            // Now disable the listener.
+            MethodInfo onDisableMethod = appEventListener.GetType()
+                .GetMethod("OnDisable", BindingFlags.NonPublic | BindingFlags.Instance);
             onDisableMethod.Invoke(appEventListener, null);
 
-            // Raise the event again; the callback should not be invoked.
+            // Change state back to initial state manually.
+            appManager.ChangeState(initialState);
+            Assert.AreEqual(initialState, appManager.GetCurrentState());
+
+            // Raise the event again; since the listener is disabled, the state should remain unchanged.
             appEvent.Raise();
-            Assert.AreEqual(1, callbackInvocationCount);
+            Assert.AreEqual(initialState, appManager.GetCurrentState());
         }
     }
 }
