@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3eb006c70b0424aa5d063172cd0a085, type: 3}
+  m_Name: On Change To Level 2 State
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 79bfcac3e1a3b6148a6c6c1547af59da, type: 2}
+  stateToChangeTo: {fileID: 11400000, guid: 27e14b01a625a8f408c7ab4087726289, type: 2}

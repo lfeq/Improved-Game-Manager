@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0754e5d7403b4b789be7c24fd954027c, type: 3}
+  m_Name: Restart Current Scene State
+  m_EditorClassIdentifier: 
+  eventListener: {fileID: 11400000, guid: 8034833cda5ba6e48add6e5f98295211, type: 2}
+  stateName: Restart Current Scene
+  debugMode: 0

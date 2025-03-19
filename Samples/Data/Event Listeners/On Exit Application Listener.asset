@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3eb006c70b0424aa5d063172cd0a085, type: 3}
+  m_Name: On Exit Application Listener
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 4385615d461c1bd4190a0dc0d6aaddaf, type: 2}
+  stateToChangeTo: {fileID: 11400000, guid: 8cfd11988ac28bd43aa4b9845849f749, type: 2}
