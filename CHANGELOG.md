@@ -1,3 +1,9 @@
+## [1.0.0] - 18/03/2025
+### Release
+- Added Unit Tests
+- Added basic states
+- Added `GetCurrentState` method to `ApplicationManager`
+
 ## [0.0.3] - 15/03/2025
 
 ### Bug Fixes and Improvements

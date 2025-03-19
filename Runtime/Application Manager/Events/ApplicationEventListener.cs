@@ -7,7 +7,8 @@ namespace Application_Manager.Events {
         menuName = "Application Manager/Application Event Listener/ New Application Event Listener")]
     public class ApplicationEventListener : ScriptableObject {
         [Tooltip("Event to register with.")] public ApplicationEvent Event;
-
+        
+        // TODO: Probably should just call ChangeState directly from the event
         [Tooltip("Response to invoke when Event is raised.")]
         public UnityEvent Response;
 
