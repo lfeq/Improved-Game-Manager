@@ -5,7 +5,7 @@
   "description": "Improved Game Manager allows you to manage the game state in a more efficient way. Using scriptable objects to store the game state and events to change it.",
   "unity": "2022.1",
   "dependencies": {
-    "com.unitycommunity.unitysingleton": "https://github.com/UnityCommunity/UnitySingleton.git#main"
+    "com.unitycommunity.unitysingleton": "https://github.com/UnityCommunity/UnitySingleton.git"
   },
   "author": {
     "name": "Lorenz Equihua",
