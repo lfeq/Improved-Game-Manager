@@ -5,11 +5,7 @@
         "GUID:de184cc3ec226704b92a2445e8648cf3"
     ],
     "includePlatforms": [],
-    "excludePlatforms": [
-        "ReservedCFE",
-        "WindowsStandalone32Server",
-        "WindowsStandalone64Server"
-    ],
+    "excludePlatforms": [],
     "allowUnsafeCode": false,
     "overrideReferences": false,
     "precompiledReferences": [],
