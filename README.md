@@ -67,7 +67,7 @@ Objects, promoting a more modular and maintainable architecture.
 
 1. Open Unity's Package Manager.
 2. Add the required dependency via Git URL: `https://github.com/UnityCommunity/UnitySingleton.git`
-3. Add this package via Git URL: https://github.com/lfeq/Improved-Game-Manager.git
+3. Add this package via Git URL: `https://github.com/lfeq/Improved-Game-Manager.git`
 4. Done!
 
 ---
