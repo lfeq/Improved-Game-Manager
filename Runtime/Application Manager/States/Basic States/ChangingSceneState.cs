@@ -2,7 +2,7 @@
 using UnityEngine.SceneManagement;
 
 namespace Application_Manager.States {
-    [CreateAssetMenu(fileName = "New Changing Scene State", menuName = menuRootName + "ChangingSceneState")]
+    [CreateAssetMenu(fileName = "New Changing Scene State", menuName = MENU_ROOT_NAME + "ChangingSceneState")]
     public class ChangingSceneState : BaseState {
         public string sceneName;
 
