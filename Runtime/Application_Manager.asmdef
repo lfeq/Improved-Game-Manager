@@ -4,29 +4,12 @@
     "references": [
         "GUID:de184cc3ec226704b92a2445e8648cf3"
     ],
-    "includePlatforms": [
-        "Android",
-        "Editor",
-        "EmbeddedLinux",
-        "iOS",
-        "LinuxStandalone64",
-        "CloudRendering",
-        "macOSStandalone",
-        "Switch",
-        "PS4",
-        "PS5",
-        "QNX",
-        "tvOS",
-        "WSA",
-        "VisionOS",
-        "WebGL",
-        "WindowsStandalone32",
-        "WindowsStandalone64",
-        "GameCoreXboxOne",
-        "XboxOne",
-        "GameCoreScarlett"
+    "includePlatforms": [],
+    "excludePlatforms": [
+        "ReservedCFE",
+        "WindowsStandalone32Server",
+        "WindowsStandalone64Server"
     ],
-    "excludePlatforms": [],
     "allowUnsafeCode": false,
     "overrideReferences": false,
     "precompiledReferences": [],
