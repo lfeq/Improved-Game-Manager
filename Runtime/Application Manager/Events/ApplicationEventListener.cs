@@ -11,8 +11,8 @@ namespace Application_Manager.Events {
         [Tooltip("Event to register with.")] 
         public ApplicationEvent Event;
         
-        [Tooltip("State to change to when Event is raised.")]
-        public BaseState stateToChangeTo;
+        [Tooltip("State to change to when Event is raised."), RequireInterface(typeof(IState))]
+        public ScriptableObject stateToChangeTo;
 
         /// <summary>
         /// Registers the listener with the event when the listener is enabled.
@@ -38,7 +38,7 @@ namespace Application_Manager.Events {
         /// Called when the event is raised. Changes the application state to the specified state.
         /// </summary>
         public void OnEventRaised() {
-            ApplicationManager.Instance.ChangeState(stateToChangeTo);
+            ApplicationManager.Instance.ChangeState(stateToChangeTo as IState);
         }
     }
 }
