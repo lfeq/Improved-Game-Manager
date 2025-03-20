@@ -12,8 +12,8 @@ namespace Application_Manager {
         [Tooltip(
             "The initial state of the application when it starts." +
             "This state will be set immediately after the ApplicationManager is initialized.")]
-        [SerializeField]
-        private BaseState initialState;
+        [SerializeField, RequireInterface(typeof(IState))]
+        private ScriptableObject initialState;
 
         /// <summary>
         /// The state machine instance that handles state transitions.
@@ -31,23 +31,23 @@ namespace Application_Manager {
             }
             m_stateMachine = new StateMachine();
             if (initialState != null) {
-                m_stateMachine.ChangeState(initialState);
+                m_stateMachine.ChangeState(initialState as IState);
             }
         }
 
         /// <summary>
         /// Gets the current state of the application.
         /// </summary>
-        /// <returns>The current BaseState of the application, or null if no state is set.</returns>
-        public BaseState GetCurrentState() {
-            return m_stateMachine.CurrentState as BaseState;
+        /// <returns>The current IState of the application, or null if no state is set.</returns>
+        public IState GetCurrentState() {
+            return m_stateMachine.CurrentState;
         }
 
         /// <summary>
         /// Changes the current state of the application to a new state.
         /// </summary>
         /// <param name="t_newState">The new state to transition to.</param>
-        public void ChangeState(BaseState t_newState) {
+        public void ChangeState(IState t_newState) {
             m_stateMachine.ChangeState(t_newState);
         }
     }
