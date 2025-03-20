@@ -51,6 +51,7 @@ address this issue, the Application Manager utilizes the State Machine pattern i
 Objects, promoting a more modular and maintainable architecture.
 
 ---
+
 ## Features
 
 - Easy creation and management of game states and events through Scriptable Objects.
@@ -95,6 +96,27 @@ Objects, promoting a more modular and maintainable architecture.
 
 6. Assign EventListener to State:
     - Assign the Event to the EventListener's inspector.
+
+### Custom States
+
+You can create your custom states by inheriting from the `BaseState` class. This allows you to define custom logic for
+more complex game states.
+
+```csharp
+[CreateAssetMenu(fileName = "New Example State", menuName = MENU_ROOT_NAME + "Example State")]
+    public class ExampleState : BaseState {
+        
+        public override void OnEnter() {
+            base.OnEnter();
+            // Add custom logic here
+        }
+
+        public override void OnExit() {
+            base.OnExit();
+            // Add custom logic here
+        }
+    }
+```
 
 ---
 
