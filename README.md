@@ -104,18 +104,18 @@ more complex game states.
 
 ```csharp
 [CreateAssetMenu(fileName = "New Example State", menuName = MENU_ROOT_NAME + "Example State")]
-    public class ExampleState : BaseState {
-        
-        public override void OnEnter() {
-            base.OnEnter();
-            // Add custom logic here
-        }
+public class ExampleState : BaseState {
+     
+  public override void OnEnter() {
+      base.OnEnter();
+      // Add custom logic here
+  }
 
-        public override void OnExit() {
-            base.OnExit();
-            // Add custom logic here
-        }
-    }
+  public override void OnExit() {
+      base.OnExit();
+      // Add custom logic here
+  }
+}
 ```
 
 ---
