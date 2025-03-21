@@ -1,3 +1,9 @@
+## [1.2.0] - 20/03/2025
+
+## Added a Custom Editor Window that Creates States, Events and Listeners for you
+
+- Added a custom editor window that creates states, events and listeners for you, Only BaseState at the moment.
+
 ## [1.1.0] - 20/03/2025
 
 ### Refactoring and Improvements
