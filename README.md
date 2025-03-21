@@ -75,6 +75,17 @@ Objects, promoting a more modular and maintainable architecture.
 
 ## Usage
 
+### Improved Usage
+
+- You can create your new `BaseStates` with the editor window found in `Window/Application Manager/Create State`
+  Here you can create a new state, event and event listener all in one go, just assign the state type, the state name,
+  the path where you want to save your new state and click create. This will generate the `Event`, `EventListener` and
+  `State` for you and put them in separated folders. By default, the path is `Assets/Data/Application States/States`,
+  `Assets/Data/Application States/Application Events` and `Assets/Data/Application States/Application EventListeners`
+  respectively. Just remember to assign the state to transition to in the `EventListener` inspector.
+
+### Basic Usage
+
 1. Create a new State:
     - Right-click in the Project window → `Application Manager/States/[State]`
 
